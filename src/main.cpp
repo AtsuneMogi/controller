@@ -148,7 +148,7 @@ void readGyro() {
         setColor(colors[2]);
     } else if (roll < -20 && pitch < -20) {
         drawDisplay("Left-Forward");
-        if (roll < -50 || pitch < -50) {
+        if (roll < -40 || pitch < -40) {
             udp.broadcastTo("C", port);
         } else {
             udp.broadcastTo("c", port);
@@ -156,7 +156,7 @@ void readGyro() {
         setColor(colors[7]);
     } else if (roll < -20 && 20 < pitch) {
         drawDisplay("Right-Forward");
-        if (roll < -50 || 50 < pitch) {
+        if (roll < -40 || 40 < pitch) {
             udp.broadcastTo("D", port);
         } else {
             udp.broadcastTo("d", port);
@@ -164,7 +164,7 @@ void readGyro() {
         setColor(colors[1]);
     } else if (20 < roll && pitch < -20) {
         drawDisplay("Left-Back");
-        if (50 < roll || pitch < -50) {
+        if (40 < roll || pitch < -40) {
             udp.broadcastTo("E", port);
         } else {
             udp.broadcastTo("e", port);
@@ -172,7 +172,7 @@ void readGyro() {
         setColor(colors[5]);
     } else if (20 < roll && 20 < pitch) {
         drawDisplay("Right-Back");
-        if (50 < roll || 50 < pitch) {
+        if (40 < roll || 40 < pitch) {
             udp.broadcastTo("F", port);
         } else {
             udp.broadcastTo("f", port);
